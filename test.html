@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Water Flow</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #e0f7fa;
+    font-family: Arial, sans-serif;
+  }
+
+  .pump-container {
+    position: relative;
+    width: 120px;
+    height: 200px;
+  }
+
+  /* Pump body */
+  .pump-body {
+    width: 80px;
+    height: 120px;
+    background: linear-gradient(145deg, #4CAF50, #2e7d32);
+    border-radius: 20px 20px 10px 10px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  /* Pump nozzle */
+  .pump-nozzle {
+    width: 20px;
+    height: 40px;
+    background: #4CAF50;
+    position: absolute;
+    top: -40px;
+    left: 30px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  /* Water streams */
+  .water {
+    position: absolute;
+    width: 6px;
+    height: 0;
+    background: #00f0ff;
+    border-radius: 50%;
+    top: 120px;
+    left: 37px;
+    animation: drip 1s infinite;
+  }
+
+  .water:nth-child(2) {
+    left: 30px;
+    animation-delay: 0.2s;
+  }
+
+  .water:nth-child(3) {
+    left: 44px;
+    animation-delay: 0.4s;
+  }
+
+  @keyframes drip {
+    0% { height: 0; opacity: 0; }
+    30% { height: 40px; opacity: 1; }
+    60% { height: 60px; opacity: 0.7; }
+    100% { height: 0; opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="pump-container">
+  <div class="pump-body">
+    <div class="pump-nozzle"></div>
+    <div class="water"></div>
+    <div class="water"></div>
+    <div class="water"></div>
+  </div>
+</div>
+
+</body>
+</html>
